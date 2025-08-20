@@ -39,7 +39,7 @@ header.nav{
 
 /* Logo controlado por altura (tamaño mediano) */
 .brand img{
-  height: clamp(48px, 7vw, 72px); /* más grande que antes */
+  height: clamp(64px, 10vw, 110px); /* más grande que antes */
   width: auto;
   object-fit: contain;
 }
