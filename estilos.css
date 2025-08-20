@@ -34,19 +34,17 @@ header.nav{
 
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:10px 0 }
 
-/* ================= LOGO HEADER ================= */
+/* ===== LOGO HEADER (grande, ajustable) ===== */
 .brand{ display:flex; gap:12px; align-items:center }
-
-/* Logo mediano */
 .brand img{
-  height: clamp(64px, 10vw, 110px);
+  height: clamp(64px, 10vw, 110px); /* ajusta aquí si lo quieres más/grande/pequeño */
   width: auto;
   object-fit: contain;
 }
 
 .brand .title{ font-weight:800; color:var(--primary); font-size:1.1rem; letter-spacing:.3px }
 
-/* ================= NAV ================= */
+/* ===== NAV ===== */
 .nav-links{ display:flex; gap:18px; align-items:center }
 .nav-links a{ font-weight:600; color:#374151 }
 
@@ -56,7 +54,7 @@ header.nav{
   border-radius:12px; box-shadow:var(--shadow)
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero{
   background:linear-gradient(135deg,#ecf3ff,#f8fffb);
   padding:40px 0; border-bottom:1px solid #e5e7eb
@@ -82,7 +80,7 @@ header.nav{
   .hero-content .hero-img{ max-width:100% }
 }
 
-/* ================= GRID & CARDS ================= */
+/* ===== GRID & CARDS ===== */
 .grid{ display:grid; gap:18px }
 .cards{ grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin:20px 0 }
 
@@ -92,7 +90,7 @@ header.nav{
 }
 .card h3{ margin:12px 0 8px; color:var(--primary) }
 
-/* ================= SECTIONS ================= */
+/* ===== SECTIONS ===== */
 .section{ padding:28px 0 }
 .section h2{ color:var(--primary); font-size:1.6rem; margin:0 0 10px }
 
@@ -103,17 +101,17 @@ header.nav{
 
 .list{ line-height:1.6; color:#374151 }
 
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 .footer{ background:#0e1f4b; color:#dbeafe; margin-top:32px }
 .footer a{ color:#dbeafe }
 .footer .cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; padding:18px 0 }
 
 small,.muted{ color:#94a3b8 }
 
-/* Logo del footer responsivo */
+/* Logo footer responsivo */
 .logo-footer{ display:block; max-width:200px; width:100%; height:auto }
 
-/* ================= WHATSAPP FLOATING ================= */
+/* ===== BOTÓN WHATSAPP FLOTANTE ===== */
 .whatsapp{
   position:fixed; right:18px; bottom:18px;
   background:var(--accent); color:#fff;
@@ -121,31 +119,29 @@ small,.muted{ color:#94a3b8 }
   box-shadow:var(--shadow); font-weight:800; z-index:1001
 }
 
-/* ================= HERO LIST ================= */
+/* ===== HERO LIST ===== */
 .hero-list{
   display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:12px; margin-top:14px
 }
 .kicker{ font-weight:800; color:#1f2937; text-transform:uppercase; letter-spacing:.08em; font-size:.8rem }
 
-/* ================= ICONOS ================= */
+/* ===== ICONOS ===== */
 #contacto i, .footer i { color: var(--primary); margin-right: 8px }
 
-/* ================= RESPONSIVO ================= */
+/* ===== RESPONSIVO ===== */
 @media (max-width:1024px){
-  .brand img{ height: clamp(60px, 9vw, 90px); }
+  .brand img{ height: clamp(60px, 9vw, 96px); }
   .logo-footer{ max-width:170px }
 }
 
 @media (max-width:768px){
-  .brand img{ height: clamp(50px, 8vw, 70px); }
+  .brand img{ height: clamp(52px, 8vw, 80px); }
   .logo-footer{ max-width:150px }
 }
 
 /* Ocultar menú en móviles chicos */
 @media (max-width:720px){ .nav-links{ display:none } }
 
-/* ================= FIX HEADER TAPANDO SECCIONES ================= */
-section, .hero{
-  scroll-margin-top: 80px;
-}
+/* ===== FIX: que el header no tape las secciones al dar click ===== */
+section, .hero{ scroll-margin-top: 80px; }
