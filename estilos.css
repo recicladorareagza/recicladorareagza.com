@@ -34,20 +34,19 @@ header.nav{
 
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:10px 0 }
 
+/* ================= LOGO HEADER ================= */
 .brand{ display:flex; gap:12px; align-items:center }
 
-/* ✅ Logo del header: grande y responsivo */
+/* Logo controlado por altura */
 .brand img{
-  display:block;
-  margin:0;
-  max-width:320px;   /* PC */
-  width:100%;
-  height:auto;
-  object-fit:contain;
+  height: clamp(36px, 6vw, 56px); /* altura mínima 36px, máxima 56px */
+  width: auto;
+  object-fit: contain;
 }
 
 .brand .title{ font-weight:800; color:var(--primary); font-size:1.1rem; letter-spacing:.3px }
 
+/* ================= NAV ================= */
 .nav-links{ display:flex; gap:18px; align-items:center }
 .nav-links a{ font-weight:600; color:#374151 }
 
@@ -57,6 +56,7 @@ header.nav{
   border-radius:12px; box-shadow:var(--shadow)
 }
 
+/* ================= HERO ================= */
 .hero{
   background:linear-gradient(135deg,#ecf3ff,#f8fffb);
   padding:40px 0; border-bottom:1px solid #e5e7eb
@@ -64,6 +64,7 @@ header.nav{
 .hero h1{ font-size:2.1rem; color:var(--primary); margin:0 0 8px }
 .hero p{ color:#4b5563; max-width:900px }
 
+/* ================= GRID & CARDS ================= */
 .grid{ display:grid; gap:18px }
 .cards{ grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin:20px 0 }
 
@@ -73,6 +74,7 @@ header.nav{
 }
 .card h3{ margin:12px 0 8px; color:var(--primary) }
 
+/* ================= SECTIONS ================= */
 .section{ padding:28px 0 }
 .section h2{ color:var(--primary); font-size:1.6rem; margin:0 0 10px }
 
@@ -83,13 +85,17 @@ header.nav{
 
 .list{ line-height:1.6; color:#374151 }
 
+/* ================= FOOTER ================= */
 .footer{ background:#0e1f4b; color:#dbeafe; margin-top:32px }
 .footer a{ color:#dbeafe }
 .footer .cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; padding:18px 0 }
 
 small,.muted{ color:#94a3b8 }
 
-/* Botón flotante WhatsApp */
+/* Logo del footer responsivo */
+.logo-footer{ display:block; max-width:200px; width:100%; height:auto }
+
+/* ================= WHATSAPP FLOATING ================= */
 .whatsapp{
   position:fixed; right:18px; bottom:18px;
   background:var(--accent); color:#fff;
@@ -97,29 +103,31 @@ small,.muted{ color:#94a3b8 }
   box-shadow:var(--shadow); font-weight:800; z-index:1001
 }
 
-/* Lista de ventajas en hero */
+/* ================= HERO LIST ================= */
 .hero-list{
   display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:12px; margin-top:14px
 }
 .kicker{ font-weight:800; color:#1f2937; text-transform:uppercase; letter-spacing:.08em; font-size:.8rem }
 
-/* ✅ Iconos con color de marca */
+/* ================= ICONOS ================= */
 #contacto i, .footer i { color: var(--primary); margin-right: 8px }
 
-/* ✅ Logo del footer: responsivo */
-.logo-footer{ display:block; max-width:200px; width:100%; height:auto }
-
-/* Responsivo */
+/* ================= RESPONSIVO ================= */
 @media (max-width:1024px){
-  .brand img{ max-width:240px }
+  .brand img{ height: clamp(34px, 7vw, 50px); }
   .logo-footer{ max-width:170px }
 }
 
 @media (max-width:768px){
-  .brand img{ max-width:180px }
+  .brand img{ height: clamp(32px, 8vw, 46px); }
   .logo-footer{ max-width:150px }
 }
 
 /* Ocultar menú en móviles chicos */
 @media (max-width:720px){ .nav-links{ display:none } }
+
+/* ================= FIX HEADER TAPANDO SECCIONES ================= */
+section, .hero{
+  scroll-margin-top: 80px; /* deja espacio cuando se hace click en los botones */
+}
